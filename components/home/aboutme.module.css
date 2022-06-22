@@ -1,0 +1,14 @@
+.section{
+    display: flex;
+    gap: 0 30px;
+    align-items: center;
+}
+
+.name{
+    font-size: 20px;
+    
+}
+
+.img{
+    border-radius: 50%; 
+}

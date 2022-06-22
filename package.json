@@ -5,16 +5,24 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p $PORT",
+    "lint": "next lint",
+    "heroku-postbuild": "ng build --prod"
   },
   "dependencies": {
+    "dayjs": "^1.11.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "microcms-js-sdk": "^2.0.0",
     "next": "12.1.6",
+    "prettier": "^2.7.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6"
+    "eslint": "^8.18.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0"
   }
 }
