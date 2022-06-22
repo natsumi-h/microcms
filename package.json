@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "next lint",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod",
+    "setup": "npm",
+
   },
   "dependencies": {
     "dayjs": "^1.11.3",
