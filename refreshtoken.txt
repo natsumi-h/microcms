@@ -1,0 +1,41 @@
+
+Client ID
+bfad7e03944649fa8888c1742b2724bf
+
+
+Client Secret
+af01dddf58cd4931a2186850cb552a79
+
+https://accounts.spotify.com/authorize?client_id=bfad7e03944649fa8888c1742b2724bf&response_type=code&redirect_uri=http
+%3A%2F%2Flocalhost&scope=user-read-currently-playing%20
+user-top-read%20user-read-recently-played
+
+
+CODE
+AQD7XZzSbHh0K2MqOM57KWoKnqVPMDha6bVWMmeSMogpv2TH_H4LJ795BKx4Bdh2ru-VXw3_4_-DXN4hudMwKZwTVTkoeSkU59bykincXKqQrFswE3h9mOKzXV38FYY0AtHBjNbmslx9ddnfMRXKAf6DCoDtuPbZgwMyecEDcs4BFzI9wTtyvmcqjwAhn4i0UZsWgJeJ-xUe2ZHgqRZqhorig5PYssg2_m7ELdYpb-7t_5j_gnY8dApgWQ
+
+
+
+curl https://accounts.spotify.com/api/token \
+-X POST \
+-H "Authorization: Basic YmZhZDdlMDM5NDQ2NDlmYTg4ODhjMTc0MmIyNzI0YmY6YWYwMWRkZGY1OGNkNDkzMWEyMTg2ODUwY2I1NTJhNzk=" \
+-d redirect_uri=http%3A%2F%2Flocalhost \
+-d grant_type=authorization_code \
+-d code=AQD7XZzSbHh0K2MqOM57KWoKnqVPMDha6bVWMmeSMogpv2TH_H4LJ795BKx4Bdh2ru-VXw3_4_-DXN4hudMwKZwTVTkoeSkU59bykincXKqQrFswE3h9mOKzXV38FYY0AtHBjNbmslx9ddnfMRXKAf6DCoDtuPbZgwMyecEDcs4BFzI9wTtyvmcqjwAhn4i0UZsWgJeJ-xUe2ZHgqRZqhorig5PYssg2_m7ELdYpb-7t_5j_gnY8dApgWQ
+
+
+
+{
+"access_token":"BQA-p4ch6jUIceLp6rk1o0TCd6aqa0KSadvggRJA5oZY5wYuUZ9KUjVBwW2U0DuzaRSgO8B9A56CVxY7qlXIDIPe_Wc_bZ3Jod4KGhQ_H9TM5qk17ZGgSVdhxgbNM3fG0cToJ_rPkVa_GDuxIaJciJaTis0vhOVTfXmn0DUQ-psqqDqX9baF2x7u9-YDL4CnPJhEj9GYkwxOokdAaFc",
+"token_type":"Bearer",
+"expires_in":3600,
+"refresh_token":"AQCkUD11ZCUsVXLWmODblredWxhDrwNbY7kA-WWq7Z70po0nNoXoIhXYMeAy1nhCfiLozQRZ8hr_bSFUL4BaN-0684iH21mra0W_C70_NCXljDAsU0bFgweHAMbEGH5uNYA",
+"scope":"user-read-currently-playing user-read-recently-played user-top-read"}
+
+
+---
+
+
+SPOTIFY_CLIENT_ID=bfad7e03944649fa8888c1742b2724bf
+SPOTIFY_CLIENT_SECRET=af01dddf58cd4931a2186850cb552a79
+SPOTIFY_REFRESH_TOKEN=AQCjHqfEJ-mASgI_jScE8HtxhAt6PxxM6dvz1u1uhREBP34F4d0uo3IFQzXlLIbyv276usrcKIiRZUOFpVUj7q7X0I8cMeaIW7wwzy-XlbGD4y-1axlI3xJzz0iiRJbPUIM

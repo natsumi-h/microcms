@@ -9,9 +9,7 @@ function postDetailPage(props) {
 
   return (
     <>
-    
- 
-    <Image
+      <Image
         src={thumbnail.url}
         alt={title}
         width={600}
@@ -19,9 +17,10 @@ function postDetailPage(props) {
         objectFit="contain"
       />
 
-   
       <p className={styles.title}>{title}</p>
-      <time className={styles.time} >{dayjs(publishedAt).format("MMM DD YYYY")}</time>
+      <time className={styles.time}>
+        {dayjs(publishedAt).format("MMM DD YYYY")}
+      </time>
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
     </>
   );
@@ -50,6 +49,7 @@ export const getStaticProps = async (ctx) => {
 
   return {
     props: BlogListDetail,
+    revalidate: 10,
   };
 };
 

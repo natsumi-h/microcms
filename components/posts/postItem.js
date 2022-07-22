@@ -21,8 +21,10 @@ function PostItem(props) {
 
   return (
     <li className={styles.li}>
-      <Link href={`posts/${slug}`} > 
-        <a href={`posts/${slug}`}  className={styles.a}>{title}</a>
+      <Link href={`posts/${slug}`}>
+        <a href={`posts/${slug}`} className={styles.a}>
+          {title}
+        </a>
       </Link>
       <time className={styles.time}>{dayjs(date).format("MMM DD YYYY")}</time>
       <p id="body" dangerouslySetInnerHTML={{ __html: excerpt }}></p>
