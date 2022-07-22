@@ -58,6 +58,7 @@ export const getStaticProps = async () => {
       artists: artists,
       recentTracks: recentTracks,
     },
+    revalidate:1,
   };
 };
 
