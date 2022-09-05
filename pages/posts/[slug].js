@@ -30,9 +30,10 @@ export const getStaticPaths = async () => {
   const BlogList = await client.getList({ endpoint: "blog" });
   const slugs = BlogList.contents.map((content) => `/posts/${content.slug}`);
 
+  console.log(slugs);
   return {
     paths: slugs,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
