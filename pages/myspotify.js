@@ -17,8 +17,9 @@ function MySpotify(props) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { access_token } = await getAccessToken();
+
   //トップトラックスの取得
   const getTopTracks = await fetch("https://api.spotify.com/v1/me/top/tracks", {
     headers: {
@@ -58,7 +59,7 @@ export const getStaticProps = async () => {
       artists: artists,
       recentTracks: recentTracks,
     },
-    revalidate:1,
+    // revalidate:1,
   };
 };
 
