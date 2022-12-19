@@ -1,8 +1,13 @@
 import Image from "next/image";
 import SectionTitle from "./sectiontitle";
-import React from "react";
+import React, { FC } from "react";
+import { RecentTracksProps } from "../../types/spotify";
 
-function RecentlyPlayed(props) {
+type Props = {
+  recentTracks: RecentTracksProps;
+};
+
+export const RecentlyPlayed: FC<Props> = (props) => {
   const items = props.recentTracks.items.filter((_, index) => index <= 2);
   //console.log(items);
 
@@ -36,6 +41,6 @@ function RecentlyPlayed(props) {
       </ul>
     </div>
   );
-}
+};
 
 export default RecentlyPlayed;

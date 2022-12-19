@@ -3,8 +3,11 @@ import { client } from "../../lib/client";
 import Image from "next/image";
 import styles from "../../components/posts/single.module.css";
 import dayjs from "dayjs";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { Blog, Props } from "../../types/blog";
 
-function postDetailPage(props) {
+
+export const postDetailPage: NextPage<Blog> = (props) =>{
   const { title, publishedAt, body, thumbnail } = props;
 
   return (
@@ -26,7 +29,7 @@ function postDetailPage(props) {
   );
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
   const BlogList = await client.getList({ endpoint: "blog" });
   const slugs = BlogList.contents.map((content) => `/posts/${content.slug}`);
 
@@ -37,9 +40,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps:GetStaticProps<Props> = async (ctx) => {
   const BlogList = await client.getList({ endpoint: "blog" });
-  const currentSlug = ctx.params.slug;
+  const currentSlug = (ctx.params && ctx.params.slug);
   const contents = BlogList.contents;
   const result = contents.find((v) => v.slug === currentSlug);
   const currentId = result.id;

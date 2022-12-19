@@ -3,8 +3,22 @@ import LatestPosts from "../components/posts/latestPosts";
 import { client } from "../lib/client";
 import styles from "../components/home/home.module.css";
 import Aboutme from "../components/home/aboutme";
+import { GetStaticProps, NextPage } from "next";
+import { MicroCMSListResponse } from "microcms-js-sdk";
+import { Blog, Props } from "../types/blog";
 
-function Home(props) {
+// export type Blog = {
+//   title: string;
+//   date: string;
+//   body: string;
+//   slug:string;
+//   publishedAt:string;
+// };
+
+// export type Props = MicroCMSListResponse<Blog>;
+
+const Home: NextPage<Props> = (props) => {
+  console.log(props);
   return (
     <>
       <Aboutme></Aboutme>
@@ -14,13 +28,13 @@ function Home(props) {
       </section>
     </>
   );
-}
+};
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const BlogList = await client.getList({
     endpoint: "blog",
   });
-
+  
   return {
     props: BlogList,
     revalidate: 1,

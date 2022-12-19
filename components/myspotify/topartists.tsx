@@ -1,8 +1,13 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
+import { ArtistsProps } from "../../types/spotify";
 import SectionTitle from "./sectiontitle";
 
-function TopArtists(props) {
+type Props = {
+ artists: ArtistsProps;
+}
+
+export const TopArtists : FC<Props> = (props) => {
   //console.log(props.props.artists.items);
   //const items = props.props.artists.items;
   const items = props.artists.items.filter((_, index) => index <= 4);

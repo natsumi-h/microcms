@@ -1,9 +1,27 @@
 import dayjs from "dayjs";
 import Link from "next/link";
-import React from "react";
 import styles from "./postItem.module.css";
+import React, { FC } from "react";
+import { Blog } from "../../types/blog";
 
-function PostItem(props) {
+export type PostItemProps = Blog;
+
+export type PostItemProps2 = PostItemProps & {
+  date: string;
+};
+
+export type PostItemProps3 = Omit<PostItemProps2, "publishedAt" | "thumbnail">
+
+// export type PostItemProps = {
+//   // title: string;
+//   // date: string;
+//   // body: string;
+//   // slug: string;
+//   // publishedAt: string;
+
+// };
+
+export const PostItem: FC<PostItemProps3> = (props) => {
   const { title, date, body, slug } = props;
 
   const bodyText = body.replace(/(<([^>]+)>)/gi, "");
@@ -30,6 +48,6 @@ function PostItem(props) {
       <p id="body" dangerouslySetInnerHTML={{ __html: excerpt }}></p>
     </li>
   );
-}
+};
 
 export default PostItem;

@@ -3,21 +3,29 @@ import TopTracks from "../components/myspotify/toptracks";
 import TopArtists from "../components/myspotify/topartists";
 import RecentlyPlayed from "../components/myspotify/recentlyplayed";
 import React from "react";
+import { GetServerSideProps, NextPage } from "next";
+import { SpotifyProps } from "../types/spotify";
 //import { createContext, useContext } from "react";
 
 //export const TitleContext = createContext("title");
 
-function MySpotify(props) {
+
+export const MySpotify: NextPage<SpotifyProps> = ({
+  tracks,
+  artists,
+  recentTracks,
+}) => {
+  console.log(recentTracks);
   return (
     <>
-      <TopTracks tracks={props.tracks} />
-      <TopArtists artists={props.artists} />
-      <RecentlyPlayed recentTracks={props.recentTracks} />
+      <TopTracks tracks={tracks} />
+      <TopArtists artists={artists} />
+      <RecentlyPlayed recentTracks={recentTracks} />
     </>
   );
-}
+};
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { access_token } = await getAccessToken();
 
   //トップトラックスの取得
