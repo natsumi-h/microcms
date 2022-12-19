@@ -1,6 +1,6 @@
 // import React, { FunctionComponent } from "react";
 // import { Blog, Props } from "../../pages";
-import { FC } from "react";
+import React, { FC } from "react";
 import { Blog } from "../../types/blog";
 import PorstsGrid from "./postsGrid";
 
