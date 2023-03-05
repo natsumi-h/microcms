@@ -46,7 +46,7 @@ export const OptionsComponent: FC<Props> = (props) => {
 
         setQuestionNumber(questionNumber + 1);
         setChat([...chat, chatObj, nextQuestion]);
-      }, 500);
+      }, 200);
     } // 次の選択肢はないが、スペシャルリクエストに行くとき
     else {
       setChat([...chat, chatObj]);
@@ -54,7 +54,7 @@ export const OptionsComponent: FC<Props> = (props) => {
       setTimeout(() => {
         setCurrentOption("specialRequest");
         setChat([...chat, chatObj, nextQuestion]);
-      }, 500);
+      }, 200);
     }
   };
 
@@ -91,7 +91,7 @@ export const OptionsComponent: FC<Props> = (props) => {
     setChat([...chat, chatObj]);
     setTimeout(() => {
       setChat([...chat, chatObj, holdOnObj]);
-    }, 500);
+    }, 200);
     event.preventDefault();
 
     const content =
@@ -141,7 +141,7 @@ export const OptionsComponent: FC<Props> = (props) => {
         <form className="relative " onSubmit={handleSubmit}>
           <textarea
             placeholder="できればここ2〜3年の作品が良いです。愛の不時着はもう観たのでそれ以外でお願いします。"
-            className="w-full focus:outline-none focus:placeholder-gray-400 text-black placeholder-gray-600 px-4 bg-gray-100 rounded-md py-3"
+            className="w-full h-40 focus:outline-none focus:placeholder-gray-400 text-black placeholder-gray-600 px-4 bg-gray-100 rounded-md py-3"
             onChange={handleTextAreaOnchange}
             value={textArea}
           />
@@ -168,7 +168,7 @@ export const OptionsComponent: FC<Props> = (props) => {
       <div className="mt-9">
         <button
           onClick={handleReset}
-          className="mt-4 w-full block uppercase mx-auto shadow  bg-blue-500 hover:bg-blue-400 focus:outline-none focus:shadow-outline text-white text-s py-3 px-10 rounded font-sans"
+          className="mt-4 w-3/4 block uppercase mx-auto shadow  bg-blue-500 hover:bg-blue-400 focus:outline-none focus:shadow-outline text-white text-s py-3 px-10 rounded font-sans"
         >
           もう一度ためす！
         </button>
@@ -182,7 +182,7 @@ export const OptionsComponent: FC<Props> = (props) => {
           <button
             onClick={handleOnClick}
             key={option.id}
-            className="mt-4 w-full block uppercase mx-auto shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white text-s py-3 px-10 rounded font-sans"
+            className="mt-4 w-3/4 block uppercase mx-auto shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white text-s py-3 px-10 rounded font-sans"
           >
             {option.option}
           </button>
