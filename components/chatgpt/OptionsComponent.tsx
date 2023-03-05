@@ -3,6 +3,7 @@ import { chatArray, ChatType } from "./chatArray";
 import { optionArray } from "./optionArray";
 import { questionArray } from "./questionArray";
 import { Props } from "./Chat";
+import { OPENAPI_TOKEN } from "../../lib/openapi";
 
 type AnswerType = {
   type: string;
@@ -10,6 +11,7 @@ type AnswerType = {
 }[];
 
 export const OptionsComponent: FC<Props> = (props) => {
+
   const { currentOption, setCurrentOption, chat, setChat } = props.props;
   const currentOptionObj = optionArray.find((obj) => obj.id === currentOption);
   const currentIndex = optionArray.findIndex((obj) => obj.id === currentOption);
@@ -73,8 +75,7 @@ export const OptionsComponent: FC<Props> = (props) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization:
-            "Bearer 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",
+          Authorization: `Bearer ${OPENAPI_TOKEN}`,
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
@@ -88,6 +89,7 @@ export const OptionsComponent: FC<Props> = (props) => {
         type: "question",
         text: answer,
       };
+
       //   chatにプッシュする;
       setChat(data && [...chat, chatObj, holdOnObj, answerObj]);
       setCurrentOption(data && "completed");
