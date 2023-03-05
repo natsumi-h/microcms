@@ -29,7 +29,7 @@ export const optionArray = [
     ],
   },
   {
-    id: "moode",
+    id: "mood",
     options: [
       { id: 1, option: "思いっきり泣きたい" },
       { id: 2, option: "笑いたい" },
