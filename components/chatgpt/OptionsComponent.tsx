@@ -76,7 +76,7 @@ export const OptionsComponent: FC<Props> = (props) => {
     event.preventDefault();
     const chatObj = {
       type: "answer",
-      text: textArea,
+      text: textArea ? textArea : "とくになし",
     };
 
     //   回答を保存する
@@ -126,7 +126,7 @@ export const OptionsComponent: FC<Props> = (props) => {
     const data = await res.json();
     const answer = data && data.choices[0].message.content;
     const answerObj = answer && {
-      type: "question",
+      type: "output",
       text: answer,
     };
 
