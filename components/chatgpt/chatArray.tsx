@@ -9,7 +9,7 @@ export const chatArray = [
   },
   {
     type: "question",
-    text: "ロケーションはどこですか？選択してください。",
+    text: "ロケーションはどこですか？\n選択してください。",
   },
 ];
 

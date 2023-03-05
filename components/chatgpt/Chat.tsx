@@ -24,7 +24,7 @@ export const Chat = () => {
   };
 
   return (
-    <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col min-h-full">
+    <div className="flex-1  justify-between flex flex-col min-h-full">
       <ChatsComponent props={props}></ChatsComponent>
       <OptionsComponent props={props}></OptionsComponent>
     </div>
