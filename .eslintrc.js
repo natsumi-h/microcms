@@ -6,30 +6,25 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
+    "next/core-web-vitals",
+    "plugin:import/recommended",
+    "plugin:import/warnings",
+    // prettierと干渉しないように設定(eslint-config-prettierのプラグインが入っていて、↓が設定されていればPretierで勝手に修正してくれる)
     "prettier",
+    "plugin:import/warnings",
+    // "plugin:react/recommended"
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    sourceType: "module",
-  },
-  plugins: ["react", "@typescript-eslint"],
+
   rules: {
     // "semi" :["error", "always"],
     // "quotes": ["error", "double"],
-    "react/prop-types": ["off"],
-    "no-undef": "error",
-    "react/jsx-props-no-spreading": "off",
+    // "react/prop-types": ["off"],
+    // "no-undef": "error",
+    // "react/jsx-props-no-spreading": "off",
   },
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
+  // settings: {
+  //   react: {
+  //     version: "detect",
+  //   },
+  // },
 };
