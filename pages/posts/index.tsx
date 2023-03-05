@@ -1,4 +1,4 @@
-import { MicroCMSListResponse } from "microcms-js-sdk";
+import { MicroCMSListResponse } from "microcms-js-sdk/dist/cjs";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
 import PostsGrid from "../../components/posts/postsGrid";
@@ -15,7 +15,7 @@ export const AllPostsPage: NextPage<Props> = (props) => {
       </section>
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const BlogList = await client.getList({

@@ -19,7 +19,7 @@ import { Props } from "../types/blog";
 // export type Props = MicroCMSListResponse<Blog>;
 
 const Home: NextPage<Props> = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <>
       <Aboutme></Aboutme>
