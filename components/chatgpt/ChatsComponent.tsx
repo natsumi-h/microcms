@@ -3,7 +3,7 @@ import { ChatType } from "./chatArray";
 import { Props } from "./Chat";
 
 export const ChatsComponent: FC<Props> = (props) => {
-  const { chat, setChat } = props.props;
+  const { chat } = props.props;
   const parsedText = (text: string) => {
     // URLの正規表現パターン
     const urlPattern = /(https?:\/\/[^\s]+)/g;
@@ -39,6 +39,7 @@ export const ChatsComponent: FC<Props> = (props) => {
                   <div>
                     <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-sky-100 text-black font-sans">
                       {parsedText(chat.text)}
+                      {/* {chat.text} */}
                     </span>
                   </div>
                 </div>
