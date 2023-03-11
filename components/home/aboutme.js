@@ -1,12 +1,19 @@
 import React from "react";
 import styles from "./aboutme.module.css";
-import Image from "next/image";
+// import Image from "next/image";
 
 function Aboutme() {
   return (
     <section className={styles.section}>
       <div>
-        <Image
+        {/* <Image
+          src="/images/natsumi.jpeg"
+          alt="natsumi"
+          width={200}
+          height={200}
+          className={styles.img}
+        /> */}
+        <img
           src="/images/natsumi.jpeg"
           alt="natsumi"
           width={200}

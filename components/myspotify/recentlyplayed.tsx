@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import SectionTitle from "./sectiontitle";
 import React, { FC } from "react";
 import { RecentTracksProps } from "../../types/spotify";
@@ -23,12 +23,18 @@ export const RecentlyPlayed: FC<Props> = (props) => {
               rel="noreferrer"
               className="flex hover:opacity-70 no-underline items-center pt-5 pb-5 pr-5  gap-x-7"
             >
-              <Image
+              {/* <Image
                 src={item.track.album.images[0].url}
                 alt="alt"
                 width={60}
                 height={60}
                 objectFit="contain"
+              /> */}
+              <img
+                src={item.track.album.images[0].url}
+                alt="alt"
+                width={60}
+                height={60}
               />
 
               <div>
