@@ -1,23 +1,8 @@
-import { useAtom } from "jotai";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
-import { formAtom } from "../../state/form";
+import { useFormThanks } from "../../hooks/useFormThanks";
 
 export const Thanks = () => {
-  const router = useRouter();
-  const [_, setData] = useAtom(formAtom);
-
-  const onClick = () => {
-    router.push("/contact");
-    setData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      emailConfirmation: "",
-      newsletterRegistration: false,
-    });
-  };
-
+  const { onClick } = useFormThanks();
   return (
     <div className="text-center mt-10">
       <h2 className="font-bold text-xl">Thank you for your registration!</h2>
