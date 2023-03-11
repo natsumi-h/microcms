@@ -13,7 +13,7 @@ export const Confirmation = () => {
   const onClickGoBack = () => {
     router.push("/contact");
   };
-  
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -33,6 +33,7 @@ export const Confirmation = () => {
         }
       );
       const postResData = await postRes.json();
+      router.push("/contact/thanks");
       setData({
         firstName: "",
         lastName: "",
@@ -40,7 +41,6 @@ export const Confirmation = () => {
         emailConfirmation: "",
         newsletterRegistration: false,
       });
-      router.push("/contact/thanks");
     } catch (error: unknown) {
       if (error instanceof Error) {
         setErrorMessage(error.message);
