@@ -34,13 +34,13 @@ export const Confirmation = () => {
       );
       const postResData = await postRes.json();
       router.push("/contact/thanks");
-      setData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        emailConfirmation: "",
-        newsletterRegistration: false,
-      });
+      // setData({
+      //   firstName: "",
+      //   lastName: "",
+      //   email: "",
+      //   emailConfirmation: "",
+      //   newsletterRegistration: false,
+      // });
     } catch (error: unknown) {
       if (error instanceof Error) {
         setErrorMessage(error.message);
