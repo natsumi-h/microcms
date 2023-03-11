@@ -1,5 +1,5 @@
 import React, { FC, useState, MouseEventHandler } from "react";
-import { chatArray, ChatType } from "./chatArray";
+import { chatArray } from "./chatArray";
 import { optionArray } from "./optionArray";
 import { questionArray } from "./questionArray";
 import { Props } from "./Chat";

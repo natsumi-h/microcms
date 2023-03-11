@@ -21,6 +21,7 @@ module.exports = {
     // "react/prop-types": ["off"],
     // "no-undef": "error",
     // "react/jsx-props-no-spreading": "off",
+    "@next/next/no-img-element": "off",
   },
   // settings: {
   //   react: {

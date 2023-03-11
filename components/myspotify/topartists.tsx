@@ -1,20 +1,20 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React, { FC } from "react";
 import { ArtistsProps } from "../../types/spotify";
 import SectionTitle from "./sectiontitle";
 
 type Props = {
- artists: ArtistsProps;
-}
+  artists: ArtistsProps;
+};
 
-export const TopArtists : FC<Props> = (props) => {
+export const TopArtists: FC<Props> = (props) => {
   //console.log(props.props.artists.items);
   //const items = props.props.artists.items;
   const items = props.artists.items.filter((_, index) => index <= 4);
 
   return (
     <div>
-     <SectionTitle title="My Top Artists" />
+      <SectionTitle title="My Top Artists" />
       <ul>
         {items.map((item, index) => (
           <li key={item.name}>
@@ -25,15 +25,21 @@ export const TopArtists : FC<Props> = (props) => {
               className="flex hover:opacity-70 no-underline items-center pt-5 pb-5 pr-5  gap-x-7"
             >
               <p className="w-7 text-lg">#{index + 1}</p>
-              <Image
+              {/* <Image
                 src={item.images[0].url}
                 alt="alt"
                 width={100}
                 height={100}
                 objectFit="contain"
                 className="rounded-full"
+              /> */}
+              <img
+                src={item.images[0].url}
+                alt="alt"
+                width={100}
+                height={100}
+                className="rounded-full"
               />
-
               <p className="font-bold">{item.name} </p>
             </a>
           </li>
@@ -41,6 +47,6 @@ export const TopArtists : FC<Props> = (props) => {
       </ul>
     </div>
   );
-}
+};
 
 export default TopArtists;

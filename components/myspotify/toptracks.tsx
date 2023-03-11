@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React, { FC, Fragment } from "react";
 import { TracksProps } from "../../types/spotify";
 import SectionTitle from "./sectiontitle";
@@ -24,13 +24,19 @@ export const TopTracks: FC<Props> = (props) => {
             >
               <p className="w-7 text-lg">#{index + 1}</p>
               <div>
-                <Image
+                {/* <Image
                   src={item.album.images[0].url}
                   alt="alt"
                   layout="fixed"
                   width={60}
                   height={60}
                   objectFit="contain"
+                /> */}
+                <img
+                  src={item.album.images[0].url}
+                  alt="alt"
+                  width={60}
+                  height={60}
                 />
               </div>
 

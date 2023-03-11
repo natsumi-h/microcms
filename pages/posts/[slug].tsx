@@ -1,23 +1,28 @@
 import React from "react";
 import { client } from "../../lib/client";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "../../components/posts/single.module.css";
 import dayjs from "dayjs";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Blog, Props } from "../../types/blog";
 
-
-export const postDetailPage: NextPage<Blog> = (props) =>{
+export const postDetailPage: NextPage<Blog> = (props) => {
   const { title, publishedAt, body, thumbnail } = props;
 
   return (
     <>
-      <Image
+      {/* <Image
         src={thumbnail.url}
         alt={title}
         width={600}
         height={400}
         objectFit="contain"
+      /> */}
+      <img
+        src={thumbnail.url}
+        alt={title}
+        width={600}
+        height={400}
       />
 
       <p className={styles.title}>{title}</p>
@@ -27,9 +32,9 @@ export const postDetailPage: NextPage<Blog> = (props) =>{
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
     </>
   );
-}
+};
 
-export const getStaticPaths:GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const BlogList = await client.getList({ endpoint: "blog" });
   const slugs = BlogList.contents.map((content) => `/posts/${content.slug}`);
 
@@ -40,9 +45,9 @@ export const getStaticPaths:GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps:GetStaticProps<Props> = async (ctx) => {
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const BlogList = await client.getList({ endpoint: "blog" });
-  const currentSlug = (ctx.params && ctx.params.slug);
+  const currentSlug = ctx.params && ctx.params.slug;
   const contents = BlogList.contents;
   const result = contents.find((v) => v.slug === currentSlug);
   const currentId = result.id;
