@@ -1,11 +1,21 @@
+import { useAtom } from "jotai";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import { formAtom } from "../../state/form";
 
 export const Thanks = () => {
   const router = useRouter();
+  const [_, setData] = useAtom(formAtom);
 
   const onClick = () => {
     router.push("/contact");
+    setData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      emailConfirmation: "",
+      newsletterRegistration: false,
+    });
   };
 
   return (
