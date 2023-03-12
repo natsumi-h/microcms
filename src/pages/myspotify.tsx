@@ -9,13 +9,12 @@ import { SpotifyProps } from "../types/spotify";
 
 //export const TitleContext = createContext("title");
 
-
 export const MySpotify: NextPage<SpotifyProps> = ({
   tracks,
   artists,
   recentTracks,
 }) => {
-  console.log(recentTracks);
+  // console.log(recentTracks);
   return (
     <>
       <TopTracks tracks={tracks} />

@@ -10,7 +10,7 @@ export type PostItemProps2 = PostItemProps & {
   date: string;
 };
 
-export type PostItemProps3 = Omit<PostItemProps2, "publishedAt" | "thumbnail">
+export type PostItemProps3 = Omit<PostItemProps2, "publishedAt" | "thumbnail">;
 
 // export type PostItemProps = {
 //   // title: string;
@@ -44,8 +44,14 @@ export const PostItem: FC<PostItemProps3> = (props) => {
           {title}
         </a>
       </Link>
-      <time className={styles.time}>{dayjs(date).format("MMM DD YYYY")}</time>
-      <p id="body" dangerouslySetInnerHTML={{ __html: excerpt }}></p>
+      <time className="text-sm block mt-2">
+        {dayjs(date).format("MMM DD YYYY")}
+      </time>
+      <p
+        className="mt-2 "
+        id="body"
+        dangerouslySetInnerHTML={{ __html: excerpt }}
+      ></p>
     </li>
   );
 };

@@ -4,7 +4,6 @@ import React, { FC } from "react";
 import { Blog } from "../../types/blog";
 import PorstsGrid from "./postsGrid";
 
-
 export type LatestPostsProps = {
   latestPosts: {
     // オブジェクトの、配列
@@ -22,7 +21,6 @@ export type LatestPostsProps = {
 
 export const LatestPosts: FC<LatestPostsProps> = (props) => {
   const { latestPosts } = props;
-  console.log({ latestPosts });
 
   const posts = latestPosts.contents.filter((item, index) => index <= 2);
   return <PorstsGrid posts={posts}></PorstsGrid>;
