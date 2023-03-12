@@ -1,4 +1,4 @@
-import Chat from "../../components/chatgpt/Chat";
+import Chat from "../../components/netflix/Chat";
 
 export const ChatGpt = () => {
   return (

@@ -1,8 +1,8 @@
 import { useAtom } from "jotai";
 import { MouseEventHandler, useState } from "react";
-import { chatArray } from "../components/chatgpt/chatArray";
-import { optionArray } from "../components/chatgpt/optionArray";
-import { questionArray } from "../components/chatgpt/questionArray";
+import { chatArray } from "../components/netflix/chatArray";
+import { optionArray } from "../components/netflix/optionArray";
+import { questionArray } from "../components/netflix/questionArray";
 import { OPENAPI_TOKEN } from "../lib/openapi";
 import { chatAtom, currenOptionAtom } from "../state/chat";
 
