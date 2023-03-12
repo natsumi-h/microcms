@@ -7,6 +7,10 @@ function Layout({ children }) {
   return (
     <>
       <Head>
+        <meta
+          name="google-site-verification"
+          content="YC63E-uvlDoWkm2EHwvAb0NPOJQ0RjkeG_iqNsL4gZ8"
+        />
         <title>My blog</title>
       </Head>
       <Header></Header>

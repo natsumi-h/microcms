@@ -9,10 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   console.log(gtmId);
   return (
     <>
-      <meta
-        name="google-site-verification"
-        content="YC63E-uvlDoWkm2EHwvAb0NPOJQ0RjkeG_iqNsL4gZ8"
-      />
+
       <GoogleTagManager gtmId={gtmId as GtmId} />
       <Layout>
         <Component {...pageProps} />
