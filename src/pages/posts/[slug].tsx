@@ -1,7 +1,7 @@
 import React from "react";
 import { client } from "../../lib/client";
 // import Image from "next/image";
-import styles from "../../components/posts/single.module.css";
+import styles from "../../components/posts/singlePost.module.css";
 import dayjs from "dayjs";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Blog, Props } from "../../types/blog";
@@ -18,18 +18,18 @@ export const postDetailPage: NextPage<Blog> = (props) => {
         height={400}
         objectFit="contain"
       /> */}
-      <img
-        src={thumbnail.url}
-        alt={title}
-        width={600}
-        height={400}
-      />
+      <img src={thumbnail.url} alt={title} width={700} height={400} />
 
-      <p className={styles.title}>{title}</p>
-      <time className={styles.time}>
+      <p className="mt-4 text-3xl">{title}</p>
+      <time className="block mt-4 text-base">
         {dayjs(publishedAt).format("MMM DD YYYY")}
       </time>
-      <div dangerouslySetInnerHTML={{ __html: body }}></div>
+      <div className="mt-10 text-lg">
+        <div
+          className="prose text-lg "
+          dangerouslySetInnerHTML={{ __html: body }}
+        ></div>
+      </div>
     </>
   );
 };

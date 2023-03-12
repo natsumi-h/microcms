@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { MicroCMSListResponse } from "microcms-js-sdk";
 
 export type Props = MicroCMSListResponse<Blog>;

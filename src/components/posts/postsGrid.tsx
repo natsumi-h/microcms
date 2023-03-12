@@ -4,18 +4,8 @@ import styles from "./postGrid.module.css";
 import { Blog } from "../../types/blog";
 
 export type PostsGridProps = {
-  // オブジェクトの、配列
-  // posts: {
-  //   title: string;
-  //   date: string;
-  //   body: string;
-  //   slug:string;
-  //   publishedAt:string;
-  // }[];
-  posts:Blog[];
+  posts: Blog[];
 };
-
-
 
 export const PostsGrid: FC<PostsGridProps> = (props) => {
   const { posts } = props;
@@ -24,7 +14,6 @@ export const PostsGrid: FC<PostsGridProps> = (props) => {
       {posts.map((post) => (
         <PostItem
           key={post.slug}
-          // post={post}
           title={post.title}
           date={post.publishedAt}
           body={post.body}
