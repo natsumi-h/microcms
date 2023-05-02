@@ -127,7 +127,8 @@ export const useOptionsComponent = () => {
     });
 
     const data = await res.json();
-    const answer = data && data.choices[0].message.content;
+
+    const answer = data?.choices[0].message.content;
     const answerObj = answer && {
       type: "output",
       text: answer,
