@@ -1,7 +1,6 @@
 import React from "react";
 import { client } from "../../lib/client";
 // import Image from "next/image";
-import styles from "../../components/posts/singlePost.module.css";
 import dayjs from "dayjs";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Blog, Props } from "../../types/blog";

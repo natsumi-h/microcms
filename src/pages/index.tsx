@@ -5,6 +5,7 @@ import styles from "../components/home/home.module.css";
 import Aboutme from "../components/home/aboutme";
 import { GetStaticProps, NextPage } from "next";
 import { Props } from "../types/blog";
+import Link from "next/link";
 
 const Home: NextPage<Props> = (props) => {
   return (
@@ -13,6 +14,11 @@ const Home: NextPage<Props> = (props) => {
       <section className={styles.section}>
         <p className={styles.p}>Latest Posts / 最近の投稿</p>
         <LatestPosts latestPosts={props} />
+        <div className={styles.alignCenter}>
+          <Link href="/posts">
+            <a className={styles.readMore}>Read More</a>
+          </Link>
+        </div>
       </section>
     </>
   );

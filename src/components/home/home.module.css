@@ -1,12 +1,20 @@
-.p{
-    font-size: 18px;
-    display: block;
-    border-bottom: 1px solid #ddd;
-    line-height: 40px;
+.p {
+  font-size: 18px;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  line-height: 40px;
 }
 
+.section {
+  margin-top: 40px;
+}
 
+.alignCenter {
+  text-align: center;
+}
 
-.section{
-    margin-top: 40px;
+.readMore {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 18px;
 }
