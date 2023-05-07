@@ -21,6 +21,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/posts/latestPosts.tsx"
-  ],
+, "src/components/netflix/en/questionArrayEn.tsx"  ],
   "exclude": ["node_modules"]
 }
