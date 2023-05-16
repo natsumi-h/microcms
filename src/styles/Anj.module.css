@@ -1,0 +1,29 @@
+.buttonDiv {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.button {
+  text-decoration: underline;
+  font-size:18px;
+}
+
+.article {
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.h2 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.category {
+  font-size: 15px;
+}
