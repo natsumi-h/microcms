@@ -3,7 +3,6 @@ import { MouseEventHandler, useState } from "react";
 import { chatArray } from "../components/netflix/chatArray";
 import { optionArray } from "../components/netflix/optionArray";
 import { questionArray } from "../components/netflix/questionArray";
-import { OPENAPI_TOKEN } from "../lib/openapi";
 import { chatAtom, currenOptionAtom } from "../state/chat";
 
 export const useOptionsComponent = () => {
@@ -114,16 +113,10 @@ export const useOptionsComponent = () => {
       作品の時間の長さ：${answers[4] ? answers[4].answer : "なんでも"}、
       その他のリクエスト：${textArea ? textArea : "特にありません"}
       URL、製作年も教えてください。`;
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+
+    const res = await fetch("/api/chatgpt", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAPI_TOKEN}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: content }],
-      }),
+      body: JSON.stringify({ content: content }),
     });
 
     const data = await res.json();

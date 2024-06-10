@@ -118,16 +118,9 @@ export const useOptionsComponentEn = () => {
       Show's Duration:${answers[4] ? answers[4].answer : "Any"}、
       Special Request:${textArea ? textArea : "Not Any"}
       Please specify URL and the year of the show has been released`;
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    const res = await fetch("/api/chatgpt", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAPI_TOKEN}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: content }],
-      }),
+      body: JSON.stringify({ content: content }),
     });
 
     const data = await res.json();
