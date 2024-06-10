@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { MICROCMS_TOKEN } from "../lib/client";
 import { formAtom } from "../state/form";
 
 export const useFormHandler = () => {
@@ -53,16 +52,7 @@ export const useFormHandler = () => {
   const onSubmit = async (data: Form) => {
     setErrorMessage(null);
     try {
-      const getRes = await fetch(
-        "https://natsumih-blog.microcms.io/api/v1/contact",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "X-MICROCMS-API-KEY": `${MICROCMS_TOKEN}`,
-          },
-        }
-      );
+      const getRes = await fetch("/api/microcms");
       const getResData = await getRes.json();
       const ifDuplicateEmail = await getResData.contents.some(
         (element: GetResData) => element.email === data.email

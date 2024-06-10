@@ -6,4 +6,4 @@ export const client = createClient({
   apiKey: "9c0dfa1bc16e46c5ac27bda8bc3e2a77a3d8",
 });
 
-export const MICROCMS_TOKEN = process.env.NEXT_PUBLIC_X_MICROCMS_API_KEY;
+export const MICROCMS_TOKEN = process.env.X_MICROCMS_API_KEY;

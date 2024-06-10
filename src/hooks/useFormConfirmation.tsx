@@ -16,20 +16,24 @@ export const useFormConfirmation = () => {
     e.preventDefault();
 
     try {
-      const postRes = await fetch(
-        "https://natsumih-blog.microcms.io/api/v1/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-MICROCMS-API-KEY": `${MICROCMS_TOKEN}`,
-          },
-          body: JSON.stringify({
-            name: data.firstName,
-            email: data.email,
-          }),
-        }
-      );
+      // const postRes = await fetch(
+      //   "https://natsumih-blog.microcms.io/api/v1/contact",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "X-MICROCMS-API-KEY": `${MICROCMS_TOKEN}`,
+      //     },
+      //     body: JSON.stringify({
+      //       name: data.firstName,
+      //       email: data.email,
+      //     }),
+      //   }
+      // );
+      const postRes = await fetch("/api/microcms", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
       const postResData = await postRes.json();
       router.push("/contact/thanks");
       // setData({
